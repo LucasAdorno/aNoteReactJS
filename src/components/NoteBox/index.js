@@ -19,7 +19,7 @@ export const NoteBox = styled.div`
     align-items: center;
     justify-content: space-between;
     height: 220px;
-    width: 390px;
+    width: 100%;
     border-radius: 10px;
     background: #333;
     color: #fafafa;
