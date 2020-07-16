@@ -7,11 +7,11 @@ export const NoteBox = styled.div`
 
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
+  justify-items: center;
   gap: 20px;
   width: 90%;
   margin: 30px auto 0;
   font-family: 'Lato', sans-serif;
-
  
   .noteDiv{
     display: flex;
@@ -60,10 +60,10 @@ export const NoteBox = styled.div`
     font-size: 15px;
   }
 
-  @media(max-width: 1024px){
+  @media(max-width: 1200px){
     grid-template-columns: 1fr 1fr;
   }
-  @media(max-width: 767px){
+  @media(max-width: 920px){
     display: flex;
     flex-direction: column;
     width: 95%;
