@@ -46,7 +46,6 @@ export const NoteBox = styled.div`
     word-wrap: break-word;
     overflow: auto;
   }
-
   .noteDiv .noteFooter{
     width:98%;
     display: flex;

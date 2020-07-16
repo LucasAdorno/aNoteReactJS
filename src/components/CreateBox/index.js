@@ -27,7 +27,7 @@ export const CreateBox = styled.div`
     border: none;
     border-radius:5px 0 0 5px;
     font-weight: bold;
-    background: #f0f0f0;
+    background: #e5e5e5;
     outline: none;
   }
 
@@ -37,7 +37,7 @@ export const CreateBox = styled.div`
     padding: 8px;
     border: none;
     border-radius:7px;
-    background: #f0f0f0;
+    background: #e5e5e5;
     resize: none;
     outline: none;
   }

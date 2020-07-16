@@ -8,4 +8,18 @@ export default createGlobalStyle`
   body{
     background: #131313;
   }
+
+  ::-webkit-scrollbar-track {
+    background-color: #0004;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar {
+    width: 6px;
+    background: #0004;
+    border-radius: 4px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: #777;
+    border-radius: 4px;
+  }
 `;
