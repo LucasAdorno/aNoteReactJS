@@ -35,6 +35,7 @@ class Main extends React.Component {
       })
       this.saveToStorage()
     }
+    else{alert('Preencha o conteúdo antes de salvar!')}
   }
 
   del(key) {
