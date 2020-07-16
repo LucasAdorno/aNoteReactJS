@@ -21,7 +21,8 @@ export const NoteBox = styled.div`
     height: 220px;
     width: 390px;
     border-radius: 10px;
-    background: #fff;
+    background: #333;
+    color: #fafafa;
   }
 
   .noteDiv .noteTitle{
@@ -32,7 +33,7 @@ export const NoteBox = styled.div`
     justify-content: center;
     font-size: 16px;
     border-radius: 10px 10px 0 0;
-    background: #aaa;
+    background: #fff3;
   }
 
   .noteDiv .noteContent{

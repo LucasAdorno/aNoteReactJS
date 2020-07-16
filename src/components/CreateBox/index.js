@@ -8,7 +8,8 @@ export const CreateBox = styled.div`
   height: 220px;
   margin: 30px auto 0;
   border-radius: 6px;
-  background: #f0f0f0;
+  background: #7733ff77;
+  box-shadow: 8px 8px 1px #222;
 
   div{
     display: flex;
@@ -20,10 +21,13 @@ export const CreateBox = styled.div`
 
   div .title{
     width: 260px;
-    height: 26px;
+    height: 28px;
     padding-left: 8px;
     border: none;
     border-radius:5px;
+    font-weight: bold;
+    background: #f0f0f0;
+    outline: none;
   }
 
   div .content{
@@ -32,7 +36,9 @@ export const CreateBox = styled.div`
     padding: 8px;
     border: none;
     border-radius:7px;
+    background: #f0f0f0;
     resize: none;
+    outline: none;
   }
 
   button{

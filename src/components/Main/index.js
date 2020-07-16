@@ -22,7 +22,7 @@ class Main extends React.Component {
     let content = document.querySelector('.content')
     const date = new Date();
     const key = Math.random() * 2
-    if (content.value != '') {
+    if (content.value !== '') {
       this.dados.unshift({
         title: title.value,
         content: content.value,
@@ -38,7 +38,7 @@ class Main extends React.Component {
   }
 
   del(key) {
-    this.dados = this.dados.filter((item) => item.key != key);
+    this.dados = this.dados.filter((item) => item.key !== key);
     this.setState({
       api: this.dados
     })
@@ -63,7 +63,7 @@ class Main extends React.Component {
           </div>
           <Button
             onClick={() => this.add()}
-            bg='#1fc4fb'
+            bg='#55cc55'
           >+</Button>
         </CreateBox>
         <NoteBox>

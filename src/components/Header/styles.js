@@ -10,7 +10,8 @@ export const Container = styled.header`
     height: 80px;
     width: 100%;
     background: #000;
-    box-shadow: 0 1px 3px #ffaaff;  
+    box-shadow: 0 1px 3px #7700ff;
+;  
 
     a{
       text-decoration: none;
