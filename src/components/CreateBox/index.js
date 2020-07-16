@@ -3,7 +3,7 @@ import styled from 'styled-components';
 export const CreateBox = styled.div`
 
   display: flex;
-  justify-content: space-between;
+  /* justify-content: space-between; */
   width: 600px;
   height: 220px;
   margin: 30px auto 0;
@@ -14,24 +14,25 @@ export const CreateBox = styled.div`
   div{
     display: flex;
     flex-direction: column;
+    align-items: flex-start;
     justify-content: space-between;
-    width:80%;
+    width:90%;
     padding: 10px;
   }
 
   div .title{
-    width: 260px;
-    height: 28px;
+    width: 100%;
+    height: 40px;
     padding-left: 8px;
     border: none;
-    border-radius:5px;
+    border-radius:5px 0 0 5px;
     font-weight: bold;
     background: #f0f0f0;
     outline: none;
   }
 
   div .content{
-    width: 100%;
+    width: calc(100% + 30px);
     height: 140px;
     padding: 8px;
     border: none;
@@ -42,7 +43,8 @@ export const CreateBox = styled.div`
   }
 
   button{
-    margin: 6px 6px 0 0;
+    margin: 10px 6px 0 -2px;
+    border-radius: 0 5px 5px 0;
   }
 
   @media(max-width: 767px){
