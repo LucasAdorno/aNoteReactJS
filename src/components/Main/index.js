@@ -35,7 +35,7 @@ class Main extends React.Component {
       })
       this.saveToStorage()
     }
-    else{alert('Preencha o conteúdo antes de salvar!')}
+    else { alert('Preencha o conteúdo antes de salvar!') }
   }
 
   del(key) {
@@ -46,10 +46,10 @@ class Main extends React.Component {
     this.saveToStorage()
   }
 
-  saveToStorage(){
-    
+  saveToStorage() {
+
     localStorage.setItem('list_notes', JSON.stringify(this.dados));
-  
+
   }
 
   render() {
@@ -60,7 +60,8 @@ class Main extends React.Component {
             <input className='title'
               placeholder='Title'
               maxLength='42' />
-            <textarea className='content' />
+            <textarea className='content'
+              maxLength='440' />
           </div>
           <Button
             onClick={() => this.add()}
