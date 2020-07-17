@@ -13,7 +13,7 @@
 
 <div align="center">
   <img src="src/assets/desktop.png" width="800">
-  <img src="src/assets/mobile.png" width="400">
+  <img src="src/assets/mobile.png" width="367">
 </div>
 
 ## Instructions
