@@ -4,10 +4,10 @@
 ### Link: https://anotereact.herokuapp.com
 
 ## Built with:
-- [ReactJs]
-- [Javascript]
-- [HTML]
-- [CSS]
+- ReactJs
+- Javascript
+- HTML
+- CSS
 
 ## Preview
 
