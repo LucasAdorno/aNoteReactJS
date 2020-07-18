@@ -19,13 +19,12 @@ class Main extends React.Component {
 
     document.addEventListener('keydown', (e) => {
       let inputKey = e.which || e.keyCode;
-      if (document.querySelector('body').offsetWidth >= 1024) {
-        if (inputKey === 13 && !e.shiftKey) {
+      if (document.querySelector('body').offsetWidth >= 1024 && inputKey === 13 && !e.shiftKey) {
           e.preventDefault();
           this.add();
         }
       }
-    });
+    );
   }
 
   add() {
@@ -33,7 +32,6 @@ class Main extends React.Component {
     let title = document.querySelector('.title')
     let content = document.querySelector('.content')
     const date = new Date();
-    console.log(content);
     const key = Math.random() * 2
     if (content.value !== '') {
       this.dados.unshift({
