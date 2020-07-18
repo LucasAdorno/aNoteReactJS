@@ -6,6 +6,7 @@ import { NoteBox } from '../NoteBox';
 
 
 class Main extends React.Component {
+
   constructor(props) {
     super(props);
     this.dados = JSON.parse(localStorage.getItem('list_notes')) || []
@@ -13,14 +14,26 @@ class Main extends React.Component {
       api: this.dados
     }
   }
+
   componentDidMount() {
 
+    document.addEventListener('keydown', (e) => {
+      let inputKey = e.which || e.keyCode;
+      if (document.querySelector('body').offsetWidth >= 1024) {
+        if (inputKey === 13 && !e.shiftKey) {
+          e.preventDefault();
+          this.add();
+        }
+      }
+    });
   }
 
   add() {
+
     let title = document.querySelector('.title')
     let content = document.querySelector('.content')
     const date = new Date();
+    console.log(content);
     const key = Math.random() * 2
     if (content.value !== '') {
       this.dados.unshift({
@@ -31,9 +44,10 @@ class Main extends React.Component {
       })
       this.setState({
         api: this.dados,
-        title: [content.value = '', title.value = '']
+        input: [content.value = '', title.value = '']
       })
-      this.saveToStorage()
+      this.saveToStorage();
+      title.focus();
     }
     else { alert('Preencha o conteúdo antes de salvar!') }
   }
