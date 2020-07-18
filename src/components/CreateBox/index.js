@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const CreateBox = styled.div`
 
   display: flex;
-  /* justify-content: space-between; */
   width: 600px;
   height: 220px;
   margin: 30px auto 0;
@@ -26,6 +25,8 @@ export const CreateBox = styled.div`
     padding-left: 8px;
     border: none;
     border-radius:5px 0 0 5px;
+    font-family: 'Lato', sans-serif;
+    font-size: 16px;
     font-weight: bold;
     background: #e5e5e5;
     outline: none;
@@ -38,6 +39,8 @@ export const CreateBox = styled.div`
     border: none;
     border-radius:7px;
     background: #e5e5e5;
+    font-family: 'Lato', sans-serif;
+    font-size: 14px;
     resize: none;
     outline: none;
   }
@@ -51,5 +54,5 @@ export const CreateBox = styled.div`
     width: 94%;
   }
 
-  
+
 `;
