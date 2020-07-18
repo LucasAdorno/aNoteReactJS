@@ -1,8 +1,7 @@
 import React from 'react';
 
-import { CreateBox } from '../CreateBox';
-import { Button } from '../Button';
-import { NoteBox } from '../NoteBox';
+import CreateBox from '../CreateBox';
+import NoteBox from '../NoteBox';
 
 
 class Main extends React.Component {
@@ -16,7 +15,6 @@ class Main extends React.Component {
   }
 
   componentDidMount() {
-
     document.addEventListener('keydown', (e) => {
       let inputKey = e.which || e.keyCode;
       if (document.querySelector('body').offsetWidth >= 1024 && inputKey === 13 && !e.shiftKey) {
@@ -28,7 +26,6 @@ class Main extends React.Component {
   }
 
   add() {
-
     let title = document.querySelector('.title')
     let content = document.querySelector('.content')
     const date = new Date();
@@ -59,43 +56,14 @@ class Main extends React.Component {
   }
 
   saveToStorage() {
-
     localStorage.setItem('list_notes', JSON.stringify(this.dados));
-
   }
 
   render() {
     return (
       <>
-        <CreateBox>
-          <div className='inputsDiv'>
-            <input className='title'
-              placeholder='Title'
-              maxLength='42' />
-            <textarea className='content'
-              maxLength='440' />
-          </div>
-          <Button
-            onClick={() => this.add()}
-            bg='#55cc55'
-          >+</Button>
-        </CreateBox>
-        <NoteBox>
-          {this.state.api.map(note =>
-            <div key={note.key} className='noteDiv'>
-              <h3 className='noteTitle'>{note.title}</h3>
-              <div
-                className='noteContent'>{note.content}</div>
-              <div className='noteFooter'>
-                <h4 className='noteDate'>{note.date}</h4>
-                <Button
-                  onClick={() => this.del(note.key)}
-                  bg='#ee3322'
-                >x</Button>
-              </div>
-            </div>
-          )}
-        </NoteBox>
+        <CreateBox add={()=> this.add() } />
+        <NoteBox api={this.state.api}  del={(e)=>this.del(e)} />
       </>
     );
   }
