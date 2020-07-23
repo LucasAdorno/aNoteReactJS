@@ -1,72 +1,61 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 
 import CreateBox from '../CreateBox';
 import NoteBox from '../NoteBox';
 
+const Main = (props) => {
 
-class Main extends React.Component {
+  let dados = JSON.parse(localStorage.getItem('list_notes')) || []
+  const [api, setApi] = useState(dados);
+  const [input, setInput] = useState([]);
 
-  constructor(props) {
-    super(props);
-    this.dados = JSON.parse(localStorage.getItem('list_notes')) || []
-    this.state = {
-      api: this.dados
-    }
-  }
-
-  componentDidMount() {
+  useEffect(() => {
     document.addEventListener('keydown', (e) => {
       let inputKey = e.which || e.keyCode;
       if (document.querySelector('body').offsetWidth >= 1024 && inputKey === 13 && !e.shiftKey) {
-          e.preventDefault();
-          this.add();
-        }
+        e.preventDefault();
+        add();
       }
+    }
     );
-  }
+  }, [])
 
-  add() {
+  const add = () => {
     let title = document.querySelector('.title')
     let content = document.querySelector('.content')
     const date = new Date();
     const key = Math.random() * 2
     if (content.value !== '') {
-      this.dados.unshift({
+      dados.unshift({
         title: title.value,
         content: content.value,
         key,
         date: `${date.getDate()}/${date.getMonth()}/${date.getFullYear()}`
       })
-      this.setState({
-        api: this.dados,
-        input: [content.value = '', title.value = '']
-      })
-      this.saveToStorage();
+      setApi(dados);
+      setInput([content.value = '', title.value = '']);
+      saveToStorage();
       title.focus();
     }
     else { alert('Preencha o conteúdo antes de salvar!') }
   }
 
-  del(key) {
-    this.dados = this.dados.filter((item) => item.key !== key);
-    this.setState({
-      api: this.dados
-    })
-    this.saveToStorage()
+  const del = (key) => {
+    dados = dados.filter((item) => item.key !== key);
+    setApi(dados);
+    saveToStorage()
   }
 
-  saveToStorage() {
-    localStorage.setItem('list_notes', JSON.stringify(this.dados));
+  const saveToStorage = () => {
+    localStorage.setItem('list_notes', JSON.stringify(dados));
   }
 
-  render() {
-    return (
-      <>
-        <CreateBox add={()=> this.add() } />
-        <NoteBox api={this.state.api}  del={(e)=>this.del(e)} />
-      </>
-    );
-  }
+  return (
+    <>
+      <CreateBox add={() => add()} />
+      <NoteBox api={api} del={(e) => del(e)} />
+    </>
+  );
 }
 
 export default Main;
