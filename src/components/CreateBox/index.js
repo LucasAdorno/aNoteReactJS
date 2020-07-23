@@ -3,7 +3,7 @@ import React from 'react';
 import { Container } from './styles';
 import { Button } from '../Button';
 
-function CreateBox(props) {
+const CreateBox = (props) => {
 
   return (
     <Container>
