@@ -3,7 +3,7 @@ import React from 'react';
 import { Container } from './styles';
 import { Button } from '../Button';
 
-function NoteBox(props) {
+const NoteBox = (props) => {
 
   return (
     <Container>
