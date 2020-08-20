@@ -5,16 +5,7 @@
 
 ## Built with:
 - ReactJs
-- Javascript
-- HTML
-- CSS
-
-## Preview
-
-<div align="center">
-  <img src="src/assets/desktop.png" width="800">
-  <img src="src/assets/mobile.png" width="367">
-</div>
+- Styled-Components
 
 ## Instructions
 - Clone the project
@@ -22,3 +13,10 @@
 - Execute your terminal on the project folder
 - Insert the `npm i`
 - To run, insert `npm run start`
+
+## Preview
+
+<div align="center">
+  <img src="src/assets/desktop.png" width="800">
+  <img src="src/assets/mobile.png" width="367">
+</div>
